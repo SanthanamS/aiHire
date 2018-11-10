@@ -1,17 +1,17 @@
+(function(){
 'use strict';
 
-/**
- * @ngdoc function
- * @name aiHireApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the aiHireApp
- */
-angular.module('aiHireApp')
-  .controller('MainCtrl', function () {
+angular.module('aiHireApp').controller('MainCtrl', MainCtrl);
+  MainCtrl.$inject = ['$scope','$state'];
+  function MainCtrl($scope, $state) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+
+    $scope.aiHireClick = function(){
+    	console.log("aiHireClick");
+    };
+  }
+})();
