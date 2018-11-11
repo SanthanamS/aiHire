@@ -1,1 +1,127 @@
-<p>This is the employeer view.</p>
+<div class="container">
+   <!--  <div class="panel panel-default"> -->
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="lead"> ---- </span></div>
+		<!-- <div class="panel-body"> -->
+	        <div class="formcontainer">
+	           <!--  <div class="alert alert-success" role="alert" ng-if="ctrl.successMessage">{{successMessage}}</div>
+	            <div class="alert alert-danger" role="alert" ng-if="ctrl.errorMessage">{{errorMessage}}</div> -->
+	            <form ng-submit="submit(model.job.id)" name="myForm" class="form-horizontal">
+	                <input type="hidden" ng-model="model.job.id" />
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="uname">Title</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.name" id="uname" class="username form-control input-sm" placeholder="Enter Job Title" required />
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="age">Catageory</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.catageory" id="catageory" class="form-control input-sm" placeholder="Enter your Age." required ng-pattern="ctrl.onlyIntegers"/>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="age">Type</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.type" id="catageory" class="form-control input-sm" placeholder="Enter your Age." required ng-pattern="ctrl.onlyIntegers"/>
+	                        </div>
+	                    </div>
+	                </div>
+	
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Stack</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.stack" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Skill range</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.range" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+	                  <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Hiring Manager</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.hiringManager" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+	                  <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Division</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.division" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Max Salary</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.maxSalary" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+	               <div class="row">
+	                    <div class="form-group col-md-12">
+	                        <label class="col-md-2 control-lable" for="salary">Description</label>
+	                        <div class="col-md-7">
+	                            <input type="text" ng-model="model.job.description" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        </div>
+	                    </div>
+	                </div>
+
+
+	                <div class="row">
+	                    <div class="form-actions floatRight">
+	                        <input type="submit"  value="{{!model.job.id ? 'Add' : 'Update'}}" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid || myForm.$pristine">
+	                        <button type="button" ng-click="reset()" class="btn btn-warning btn-sm" ng-disabled="disableReset()">Reset Form</button>
+	                    </div>
+	                </div>
+	            </form>
+    	    </div>
+<!-- 		</div>	
+    </div> -->
+    <!-- <div class="panel panel-default">-->
+        <div class="panel-heading"><span class="lead"> ------- </span></div>
+		<!-- <div class="panel-body">  -->
+			<div class="table-responsive">
+		        <table class="table table-hover">
+		            <thead>
+		            <tr>
+		                <th>Title</th>
+		                <th>Catageory</th>
+		                <th>Type</th>
+		                <th>Division</th>
+		                <th width="100"></th>
+		                <th width="100"></th>
+		            </tr>
+		            </thead>
+		            <tbody>
+		            <tr ng-repeat="(index,job) in getAllJobs() track by $index">
+		                <td>{{job.name}}</td>
+		                <td>{{job.catageory}}</td>
+		                <td>{{job.type}}</td>
+		                <td>{{job.division}}</td>
+		                <td><button type="button" ng-click="editJob(index)" class="btn btn-success custom-width">Edit</button></td>
+		                <td><button type="button" ng-click="removeJob(index)" class="btn btn-danger custom-width">Remove</button></td>
+		            </tr>
+		            </tbody>
+		        </table>		
+			</div>
+	<!-- 	</div>
+    </div> -->
+</div>
