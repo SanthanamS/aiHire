@@ -46,8 +46,10 @@
 	                <div class="row">
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="salary">Skill range</label>
-	                        <div class="col-md-7">
-	                            <input type="text" ng-model="model.job.range" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        <div class="col-md-5">
+	                           <!--  <input type="text" ng-model="model.job.range" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required /> -->
+	                           <input type="range" name="range" ng-model="model.job.range" min="{{rangeMin}}"  max="{{rangeMax}}">
+	                           <span>{{model.job.range}}</span>
 	                        </div>
 	                    </div>
 	                </div>
@@ -70,8 +72,10 @@
 	                <div class="row">
 	                    <div class="form-group col-md-12">
 	                        <label class="col-md-2 control-lable" for="salary">Max Salary</label>
-	                        <div class="col-md-7">
-	                            <input type="text" ng-model="model.job.maxSalary" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required />
+	                        <div class="col-md-5">
+	                           <!--  <input type="text" ng-model="model.job.maxSalary" id="salary" class="form-control input-sm" placeholder="Enter your Salary." required /> -->
+	                            <input type="range" name="range" ng-model="model.job.maxSalary" min="{{salarayMin}}"  max="{{salaryMax}}">
+	                           <label>{{model.job.maxSalary}}</label>
 	                        </div>
 	                    </div>
 	                </div>

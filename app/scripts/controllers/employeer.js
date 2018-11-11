@@ -12,6 +12,11 @@
 
  	var scopeControl = $scope;
  	scopeControl.model = {};
+  scopeControl.rangeMin = 1;
+  scopeControl.rangeMax = 10;
+  scopeControl.salarayMin = 50000;
+  scopeControl.salaryMax = 200000;
+  scopeControl.catageorys = [{"code":"developers","value":"Developers"},{"code":"manager","value":"Manager"}];
   scopeControl.originalModel = {};
  	scopeControl.availableJobs = [];
   var currentUser;
