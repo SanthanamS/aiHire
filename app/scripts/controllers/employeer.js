@@ -73,11 +73,12 @@
   	};
 
   	scopeControl.reset = function(jobId){
-      if(isEmpty(scopeControl.originalModel)){
+     /* if(isEmpty(scopeControl.originalModel)){
         scopeControl.model = {};
       }else{
          scopeControl.model = angular.copy(scopeControl.originalModel);
-      }
+      }*/
+       scopeControl.model = {};
   	};
 
     scopeControl.disableReset = function(){

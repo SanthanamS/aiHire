@@ -114,4 +114,9 @@ body, .form-control{
   .jumbotron {
     border-bottom: 0;
   }
+  .headrLogo{
+    background-position: left top;
+    width: 300px;
+    height: 40px;
+  }
 }
